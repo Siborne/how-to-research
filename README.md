@@ -96,6 +96,10 @@
 - [东南大学魏秀参老师：浅谈学术Rebuttal](https://zhuanlan.zhihu.com/p/104298923)
 - [MLNLP-World/Paper-Rebuttal-Tips](https://github.com/MLNLP-World/Paper-Rebuttal-Tips)
 
+## 📄 许可协议
+
+本作品采用 [CC BY-NC 4.0](LICENSE) 许可协议：署名后可自由共享、改编，但不得用于商业目的。详见 [LICENSE](LICENSE)。
+
 ## 📌 TODO
 
 - [ ] 补充更多配套资料（进行中）

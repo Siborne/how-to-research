@@ -204,7 +204,7 @@ Benchmark一般需要根据benchmark的工作量和特点，比如数据构建�
 - 在小红书、抖音、微信公众号等平台搜索“科研论文配色”相关的帖子，例如：
   - ![img](<img/image (22).png>)
   - ![img](<img/image (23).png>)
-  - ![img](<img/image (24).png>)
+  - ![img](<img/image (24).jpg>)
 
 ### 二、借助阴影、形状变化增加图片立体感
 
