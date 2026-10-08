@@ -1,0 +1,19 @@
+# ---- OS ----
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Office / 临时文件 ----
+~$*
+*.tmp
+
+# ---- 说明 ----
+# 若使用 Obsidian 管理本仓库，可去掉下面一行的注释以忽略本地工作区配置
+# .obsidian/workspace.json
