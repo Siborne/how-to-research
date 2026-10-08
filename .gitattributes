@@ -9,3 +9,6 @@
 *.jpeg binary
 *.gif binary
 *.svg text eol=lf
+*.docx binary
+*.doc binary
+*.pdf binary
