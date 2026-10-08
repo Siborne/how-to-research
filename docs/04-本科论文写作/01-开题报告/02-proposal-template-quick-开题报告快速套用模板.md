@@ -1,6 +1,6 @@
 # 02-proposal-template-quick-开题报告快速套用模板
 
-> 📎 由 `02-proposal-template-quick-开题报告快速套用模板.docx` 自动提取正文，便于全文检索；**排版与表格样式请以原件为准**。
+> 📎 原件（含排版与图片）：[`02-proposal-template-quick-开题报告快速套用模板.docx`](../原件/01-开题报告/02-proposal-template-quick-开题报告快速套用模板.docx) ｜ 本文由原件自动提取正文，便于全文检索；**排版、表格与图片请以原件为准**。
 
 ---
 

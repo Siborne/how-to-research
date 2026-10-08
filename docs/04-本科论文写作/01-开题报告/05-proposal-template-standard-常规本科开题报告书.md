@@ -1,6 +1,6 @@
 # 05-proposal-template-standard-常规本科开题报告书
 
-> 📎 由 `05-proposal-template-standard-常规本科开题报告书.doc`（Word 97 旧格式）自动提取正文，表格结构可能缺失；**请以原件为准**。
+> 📎 原件（含排版与图片）：[`05-proposal-template-standard-常规本科开题报告书.doc`](../原件/01-开题报告/05-proposal-template-standard-常规本科开题报告书.doc) ｜ 本文由原件自动提取正文，便于全文检索；**排版、表格与图片请以原件为准**。
 
 ---
 
