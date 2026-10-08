@@ -163,29 +163,29 @@ Benchmark一般需要根据benchmark的工作量和特点，比如数据构建�
 
 #### 案例 1：用底色标出本文方法性能，数字下面两条线表示第一名，一条线表示第二名，仅加粗表示第三名
 
-![img](<img/image (14).png>)
+![img](<img/image (15).png>)
 
 #### 案例 2：用颜色深浅和加粗/横线区分性能，同时引入了金牌/银牌两个logo，最后一列通过红色/绿色表明性能增减
 
-![img](<img/image (15).png>)
+![img](<img/image (16).png>)
 
 #### 案例 3：通过插入不同的logo表示不同算法的特点，增加表格内容的丰富程度和美观度
 
-![img](<img/image (16).png>)
+![img](<img/image (17).png>)
 
 ### 各类曲线（More Analysis）
 
 通过曲线展示随着某个指标的变化，不同方法的性能变化，是除了表格之外最常用的实验结果图
 
-![img](<img/image (17).png>)
+![img](<img/image (18).png>)
 
 #### 案例 1：可以在曲线上增加logo、性能增减的描述等等，让结果更直观
 
-![img](<img/image (18).png>)
+![img](<img/image (19).png>)
 
 #### 案例 2：通过曲线后面的底色，表示算法的方差
 
-![img](<img/image (19).png>)
+![img](<img/image (20).png>)
 
 ## Some Tips
 
@@ -195,22 +195,20 @@ Benchmark一般需要根据benchmark的工作量和特点，比如数据构建�
 
 - 基于PPT默认的色盘做一些调整，例如下面这幅图就是基于PPT的色盘配置
 
-![img](<img/image (20).png>)
+![img](<img/image (21).png>)
 
 - **ColorKit (<https://colorkit.co/palettes/>)**：指南推荐的配色站，支持生成渐变色、提取图片颜色，能直观预览调色盘在图表中的实际效果。
 - **ColorBrewer 2.0 (<https://colorbrewer2.org/>)**：经典的科学可视化配色标准，专门为地图和图表设计，支持选定“色盲友好（Colorblind safe）”和“黑白打印友好（Print friendly）”的配色方案，非常适合趋势图和柱状图。
 - **SciVisColor (<https://sciviscolor.org/>)**：由美国国家科学基金会等支持开发的网站，专门针对科学数据可视化设计，提供极其专业的发散型和连续型调色盘。
 - **Adobe Color (<https://color.adobe.com/>)**：通过色彩类比、互补等规则自制调色盘，也可以在“探索”模块搜索“Scientific”、“Academic”直接复用全球设计师分享的学术感配色。
 - 在小红书、抖音、微信公众号等平台搜索“科研论文配色”相关的帖子，例如：
-  - ![img](<img/image (21).png>)
   - ![img](<img/image (22).png>)
   - ![img](<img/image (23).png>)
+  - ![img](<img/image (24).png>)
 
 ### 二、借助阴影、形状变化增加图片立体感
 
 通过增加阴影、不同形状（实线、虚线）的线条，增加图像的立体感，例如下面两个例子：
-
-![img](<img/image (24).jpg>)
 
 ![img](<img/image (25).png>)
 
