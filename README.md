@@ -4,11 +4,27 @@
 
 面向刚进入课题组参与科研工作的同学，帮助大家快速建立对科研的基本认识，了解如何做科研、如何写论文。本仓库是相关文档的 Markdown 版本，便于本地阅读、检索与版本管理。
 
+## 🖥️ 网页版
+
+仓库自带一个无构建依赖的 landing page，入口为 [`index.html`](index.html)。
+
+```bash
+# 本地预览
+python -m http.server 8080
+# 打开 http://localhost:8080
+```
+
+如需发布到 GitHub Pages，在仓库 **Settings → Pages** 中选择 **Deploy from a branch**，分支选 `main`、目录选 `/ (root)` 即可。
+
 ## 🗂️ 目录结构
 
 ```text
 .
 ├── README.md                    # 你在这里，总入口
+├── index.html                   # 网页版 landing page
+├── styles.css                   # 页面样式
+├── script.js                    # 导航、动效与复制交互
+├── assets/                      # favicon 与社交分享封面
 └── docs/
     ├── 01-做科研/               # 找论文 → 读论文 → 想 Idea → 汇报 / Meeting / 习惯
     │   ├── README.md            # 本章总览（如何做科研？）
@@ -114,7 +130,7 @@
 
 ## 📄 许可协议
 
-本作品采用 [CC BY-NC 4.0](LICENSE) 许可协议：署名后可自由共享、改编，但不得用于商业目的。详见 [LICENSE](LICENSE)。
+Copyright © 2026 Siborne。本作品采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode) 许可协议：署名后可自由共享、改编，但不得用于商业目的。仓库中的 [LICENSE](LICENSE) 为官方协议全文。
 
 ## 📌 TODO
 
