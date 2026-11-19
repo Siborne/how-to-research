@@ -1,0 +1,61 @@
+name: Release PDF
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-pdf
+  cancel-in-progress: true
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python -m pip install markdown
+
+      - name: Install PDF dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y weasyprint fonts-noto-cjk fonts-noto-color-emoji
+
+      - name: Build HTML source
+        run: python scripts/build_pdf.py
+
+      - name: Render PDF
+        run: weasyprint build/how-to-research.html build/how-to-research.pdf
+
+      - name: Set release metadata
+        run: |
+          echo "TAG=pdf-$(date -u +%Y%m%d%H%M%S)" >> "$GITHUB_ENV"
+          echo "DATE=$(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_ENV"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: "科研入门指南 PDF · ${{ env.DATE }}"
+          body: |
+            📕 离线 PDF 版《科研入门指南》
+
+            - 文件：`how-to-research.pdf`
+            - 生成时间：${{ env.DATE }}
+            - 源码版本：`${{ github.sha }}`
+
+            由 [release-pdf](.github/workflows/release-pdf.yml) 工作流在推送到 `main` 时自动生成。
+          files: build/how-to-research.pdf

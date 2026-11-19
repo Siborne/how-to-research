@@ -16,6 +16,15 @@ python -m http.server 8080
 
 网页版通过 [`.github/workflows/pages.yml`](.github/workflows/pages.yml) 自动发布。工作流只上传 landing page 所需文件，不经过 Jekyll，因此不会误解析 Markdown 内容。
 
+## 📥 离线 PDF 下载
+
+仓库会在每次推送到 `main` 后，自动把全部 Markdown 文档合并渲染成一份 PDF 并发布到 Releases，方便离线阅读：
+
+- **最新版直达**：[`how-to-research.pdf`](https://github.com/Siborne/how-to-research/releases/latest/download/how-to-research.pdf)
+- **查看历史版本**：[Releases 页面](https://github.com/Siborne/how-to-research/releases)
+
+PDF 由 [`.github/workflows/release-pdf.yml`](.github/workflows/release-pdf.yml) 自动生成；如需手动触发，可到 Actions 页面运行 `Release PDF` 工作流。本地也可自行生成：先 `pip install markdown` 并安装 WeasyPrint，然后运行 `python scripts/build_pdf.py`，再执行 `weasyprint build/how-to-research.html build/how-to-research.pdf`。
+
 ## 🗂️ 目录结构
 
 ```text
@@ -26,6 +35,8 @@ python -m http.server 8080
 ├── script.js                    # 导航、动效与复制交互
 ├── assets/                      # favicon 与社交分享封面
 ├── .github/workflows/pages.yml  # GitHub Pages 自动发布
+├── .github/workflows/release-pdf.yml  # 离线 PDF 自动发布
+├── scripts/build_pdf.py         # 合并 Markdown 并生成 PDF 源文件
 └── docs/
     ├── 01-做科研/               # 找论文 → 读论文 → 想 Idea → 汇报 / Meeting / 习惯
     │   ├── README.md            # 本章总览（如何做科研？）
