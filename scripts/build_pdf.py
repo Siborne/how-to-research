@@ -37,6 +37,8 @@ _MARKDOWN = markdown.Markdown(
     extensions=["tables", "fenced_code", "sane_lists", "attr_list"]
 )
 
+PDF_EXCLUDED_SUBDIR_CHAPTERS = {"04-本科论文写作"}
+
 
 @dataclass
 class Doc:
@@ -170,6 +172,8 @@ def collect_chapters() -> list[Chapter]:
             ),
             key=lambda p: p.name,
         )
+        if chapter_dir.name in PDF_EXCLUDED_SUBDIR_CHAPTERS:
+            subdirs = []
         for subdir in subdirs:
             docs = sorted(
                 subdir.rglob("*.md"),

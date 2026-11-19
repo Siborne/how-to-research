@@ -5,7 +5,7 @@
   <p>
     <a href="http://siborne.top/how-to-research/">🌐 网站</a> ·
     <a href="https://github.com/Siborne/how-to-research/releases/latest/download/how-to-research.pdf">📕 PDF 手册</a> ·
-    <a href="#acknowledgements">🙏 致谢</a>
+    <a href="#acknowledgements">📚 参考文献</a>
   </p>
   <p>
     <img src="https://img.shields.io/badge/status-building-brightgreen" alt="status: building" />
@@ -74,11 +74,16 @@ PDF 由 [`.github/workflows/release-pdf.yml`](.github/workflows/release-pdf.yml)
     │   ├── 02-scholarship-有哪些能申请的奖学金.md
     │   ├── 03-ai-tips-AI辅助科研tips.md
     │   └── img/
-    └── 04-本科论文写作/          # 本科毕业设计：开题报告 → 初稿 → 查重避坑
+    ├── 04-本科论文写作/          # 本科毕业设计：开题报告 → 初稿 → 查重避坑
         ├── README.md
         ├── 01-开题报告/          # Markdown 正文（9 篇）
         ├── 02-初稿与写作/        # Markdown 正文（8 篇）
         └── 原件/                 # 原始 .docx / .doc / .pdf（保留排版与图片）
+    └── 05-科研方向学习资料/      # AI 方向入门：基础 → 选题实践 → 汇报
+        ├── README.md            # 本章总览与学习路线
+        ├── 01-basics-基础学习资料.md
+        ├── 02-directions-方向选题与代码实践.md
+        └── 03-notes-观后感与想法记录.md
 ```
 
 ## 🚀 推荐阅读顺序
@@ -133,24 +138,23 @@ PDF 由 [`.github/workflows/release-pdf.yml`](.github/workflows/release-pdf.yml)
 | [📋 开题报告](docs/04-本科论文写作/01-开题报告/) | 9 份开题报告模板、大纲与写作指南 |
 | [✍️ 初稿与写作](docs/04-本科论文写作/02-初稿与写作/) | 初稿模板、查重避坑、文献综述与写作笔记 |
 
+### 第五步 · 科研方向学习资料
+
+面向已有一定基础、想进一步入门 LLM / MLLM Reasoning、Agent、Neuro-Symbolic Learning 等 AI 科研方向的同学，按「基础 → 选题实践 → 汇报」推进。
+
+| 顺序 | 文档 | 内容 |
+| :--: | --- | --- |
+| — | [🎯 科研方向学习资料（章节总览）](docs/05-科研方向学习资料/README.md) | 学习目标、自测标准与路线图 |
+| 1 | [🧱 基础学习资料](docs/05-科研方向学习资料/01-basics-基础学习资料.md) | 深度学习、LLM、多模态、推理与 Agent 基础 |
+| 2 | [🧭 方向选题与代码实践](docs/05-科研方向学习资料/02-directions-方向选题与代码实践.md) | 7 个可选题方向 + 论文与复现任务 |
+| 3 | [📝 观后感与想法记录](docs/05-科研方向学习资料/03-notes-观后感与想法记录.md) | 读完论文、跑完代码后的沉淀方法 |
+
 ## 🧩 说明
 
 - 文档按 **目录分组 + 数字前缀** 组织，文件名形如 `01-find-papers-如何找论文.md`，既保证文件管理器中的顺序，也便于检索。
 - 每篇文档顶部有面包屑导航，底部有「上一篇 / 下一篇」，可以顺着读下来。
 - 图片统一放在各章节的 `img/` 目录下，相对路径引用。
 - `docs/04-本科论文写作/` 把 **Markdown 正文**与**原始文档**分开存放：正文放在各章节目录，`.docx` / `.doc` / `.pdf` 原件统一放在 `原件/` 下，便于阅读与检索。
-
-<a id="acknowledgements"></a>
-
-## 🙏 参考与致谢
-
-本指南的目录组织与分章方式参考了以下资料：
-
-- [LAMDA-NeSy/Research-Starter-Kit](https://github.com/LAMDA-NeSy/Research-Starter-Kit)
-- [周志华老师：做研究与写论文](https://zhuanlan.zhihu.com/p/98747105)
-- [浙江大学彭思达老师：我的科研经验](https://github.com/pengsida/learning_research)
-- [东南大学魏秀参老师：浅谈学术Rebuttal](https://zhuanlan.zhihu.com/p/104298923)
-- [MLNLP-World/Paper-Rebuttal-Tips](https://github.com/MLNLP-World/Paper-Rebuttal-Tips)
 
 ## 📄 许可协议
 
@@ -159,3 +163,38 @@ Copyright © 2026 Siborne。本作品采用 [CC BY-NC 4.0](https://creativecommo
 ## 📌 TODO
 
 - [ ] 补充更多配套资料（进行中）
+
+<a id="acknowledgements"></a>
+
+## 📚 参考文献
+
+本仓库在目录组织、写作思路与学习资料方面参考了以下项目与资料，特此致谢并标注来源。
+
+### 项目与指南
+
+1. LAMDA-NeSy. Research-Starter-Kit. <https://github.com/LAMDA-NeSy/Research-Starter-Kit> —— 目录组织与分章方式参考。
+2. LAMDA-NeSy. Lab-RoadMap（本科生科研入门学习指南）. <https://github.com/LAMDA-NeSy/Lab-RoadMap> —— 第 5 章《科研方向学习资料》整理改写来源。
+3. 周志华. 做研究与写论文. <https://zhuanlan.zhihu.com/p/98747105> —— 做科研、写论文思路参考。
+4. 彭思达. 我的科研经验（learning_research）. <https://github.com/pengsida/learning_research> —— 科研经验参考。
+5. 魏秀参. 浅谈学术 Rebuttal. <https://zhuanlan.zhihu.com/p/104298923> —— Rebuttal 内容参考。
+6. MLNLP-World. Paper-Rebuttal-Tips. <https://github.com/MLNLP-World/Paper-Rebuttal-Tips> —— Rebuttal 内容参考。
+7. Datawhale. 科研论文配图绘制指南（paper-chart-tutorial）. <https://github.com/datawhalechina/paper-chart-tutorial> —— 论文画图指南参考。
+8. 斯坦福大学. 如何做好学术报告（公开讲座）. <https://www.bilibili.com/video/BV1WF411Y73C/> —— 学术汇报章节参考。
+
+### 学习资料与教程
+
+9. Zhang A., Lipton Z. C., Li M., et al. 动手学深度学习（Dive into Deep Learning）. <https://zh.d2l.ai/> —— 深度学习基础。
+10. Karpathy A. Neural Networks: Zero to Hero. <https://karpathy.ai/zero-to-hero.html> —— 深度学习基础。
+11. PyTorch. PyTorch Tutorials. <https://pytorch.org/tutorials/> —— 深度学习框架实践。
+12. Datawhale. Happy-LLM. <https://datawhalechina.github.io/happy-llm/> —— 大语言模型基础。
+13. Datawhale. 从零开始构建智能体（hello-agents）. <https://github.com/datawhalechina/hello-agents> —— Agent 工程实践。
+14. Prompt Engineering Guide. <https://www.promptingguide.ai/zh> —— Prompt 与推理基础。
+15. Weng L. LLM Powered Autonomous Agents. <https://lilianweng.github.io/posts/2023-06-23-agent/> —— Agent 经典必读。
+16. lucidrains. vit-pytorch. <https://github.com/lucidrains/vit-pytorch> —— Vision Transformer 代码参考。
+17. 多模态大模型论文串讲（B 站视频）. <https://www.bilibili.com/video/BV1Vd4y1v77v/> 与 <https://www.bilibili.com/video/BV1fA411Z772/> —— 多模态大模型入门。
+18. Symbolic Regression Tutorial. <https://symbolicregression2025.github.io/> —— 符号回归入门。
+
+### 其他说明
+
+- `docs/04-本科论文写作/` 中的开题报告与写作材料为网络收集整理，非原创，仅供学习参考；引用、转载或公开展示前请自行确认版权与授权。
+- `docs/05-科研方向学习资料/` 中涉及的具体综述与论文，均已在对应文档内逐条标注链接，此处不重复列出。
