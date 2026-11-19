@@ -14,7 +14,7 @@ python -m http.server 8080
 # 打开 http://localhost:8080
 ```
 
-如需发布到 GitHub Pages，在仓库 **Settings → Pages** 中选择 **Deploy from a branch**，分支选 `main`、目录选 `/ (root)` 即可。
+网页版通过 [`.github/workflows/pages.yml`](.github/workflows/pages.yml) 自动发布。工作流只上传 landing page 所需文件，不经过 Jekyll，因此不会误解析 Markdown 内容。
 
 ## 🗂️ 目录结构
 
@@ -25,6 +25,7 @@ python -m http.server 8080
 ├── styles.css                   # 页面样式
 ├── script.js                    # 导航、动效与复制交互
 ├── assets/                      # favicon 与社交分享封面
+├── .github/workflows/pages.yml  # GitHub Pages 自动发布
 └── docs/
     ├── 01-做科研/               # 找论文 → 读论文 → 想 Idea → 汇报 / Meeting / 习惯
     │   ├── README.md            # 本章总览（如何做科研？）
