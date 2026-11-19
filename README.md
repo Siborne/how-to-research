@@ -1,8 +1,18 @@
-# 🔬 科研入门指南
-
-> 从 0 开始，掌握做科研、写论文的基本流程。
-
-面向刚进入课题组参与科研工作的同学，帮助大家快速建立对科研的基本认识，了解如何做科研、如何写论文。本仓库是相关文档的 Markdown 版本，便于本地阅读、检索与版本管理。
+<div align="center">
+  <img src="assets/how-to-research-logo.png" width="180" alt="科研入门指南" />
+  <h1>科研入门指南：从 0 开始，掌握做科研、写论文的基本流程</h1>
+  <p>面向刚进入课题组参与科研工作的同学，帮助大家快速建立对科研的基本认识，了解如何做科研、如何写论文。<br/>本仓库是相关文档的 Markdown 版本，便于本地阅读、检索与版本管理。</p>
+  <p>
+    <a href="http://siborne.top/how-to-research/">🌐 网站</a> ·
+    <a href="https://github.com/Siborne/how-to-research/releases/latest/download/how-to-research.pdf">📕 PDF 手册</a> ·
+    <a href="#acknowledgements">🙏 致谢</a>
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/status-building-brightgreen" alt="status: building" />
+    <img src="https://img.shields.io/badge/audience-research%20beginners-blue" alt="audience: research beginners" />
+    <img src="https://img.shields.io/badge/docs-markdown%20%2B%20PDF-orange" alt="docs: markdown + PDF" />
+  </p>
+</div>
 
 ## 🖥️ 网页版
 
@@ -129,6 +139,8 @@ PDF 由 [`.github/workflows/release-pdf.yml`](.github/workflows/release-pdf.yml)
 - 每篇文档顶部有面包屑导航，底部有「上一篇 / 下一篇」，可以顺着读下来。
 - 图片统一放在各章节的 `img/` 目录下，相对路径引用。
 - `docs/04-本科论文写作/` 把 **Markdown 正文**与**原始文档**分开存放：正文放在各章节目录，`.docx` / `.doc` / `.pdf` 原件统一放在 `原件/` 下，便于阅读与检索。
+
+<a id="acknowledgements"></a>
 
 ## 🙏 参考与致谢
 

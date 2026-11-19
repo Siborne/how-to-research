@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="900" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102B50"/><stop offset="1" stop-color="#071426"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="270" y1="280" x2="760" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72F0E3"/><stop offset="0.52" stop-color="#27C5D8"/><stop offset="1" stop-color="#438BFF"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="300" y1="380" x2="700" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#CDEEFF"/>
+    </linearGradient>
+    <filter id="glow" x="180" y="160" width="660" height="700" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="18" result="blur"/><feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.10 0 0 0 0 0.75 0 0 0 0 0.88 0 0 0 0.45 0"/><feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
+  <circle cx="512" cy="475" r="302" stroke="#244A70" stroke-width="3" opacity=".55"/>
+  <path d="M731 680C790 620 820 542 808 461" stroke="url(#cyan)" stroke-width="22" stroke-linecap="round" opacity=".95"/>
+  <path d="M807 460L806 389" stroke="url(#cyan)" stroke-width="22" stroke-linecap="round"/>
+  <g filter="url(#glow)">
+    <!-- Research lens / field of inquiry -->
+    <circle cx="492" cy="445" r="224" stroke="url(#cyan)" stroke-width="26"/>
+    <path d="M651 604L779 732" stroke="url(#cyan)" stroke-width="42" stroke-linecap="round"/>
+    <!-- Open pages, shaped as a forward-moving research path -->
+    <path d="M300 448C369 416 439 426 500 477V671C437 624 367 615 300 649V448Z" fill="url(#paper)"/>
+    <path d="M500 477C561 426 631 416 700 448V649C633 615 563 624 500 671V477Z" fill="#B8E8F7"/>
+    <path d="M500 477V671" stroke="#1E9DBA" stroke-width="13" stroke-linecap="round"/>
+    <!-- page lines -->
+    <path d="M345 492C390 477 428 484 461 505M345 541C390 526 428 533 461 554M539 505C572 484 610 477 655 492M539 554C572 533 610 526 655 541" stroke="#4B91B3" stroke-width="11" stroke-linecap="round" opacity=".68"/>
+    <!-- insight spark -->
+    <path d="M500 302L521 350L569 371L521 392L500 440L479 392L431 371L479 350L500 302Z" fill="url(#cyan)" stroke="#E8FFFF" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+  <circle cx="760" cy="286" r="12" fill="#7AF1E5"/>
+  <circle cx="285" cy="745" r="8" fill="#438BFF" opacity=".9"/>
+</svg>
