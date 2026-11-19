@@ -14,6 +14,7 @@ from __future__ import annotations
 import html
 import pathlib
 import re
+from datetime import datetime, timezone
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -25,6 +26,7 @@ DOCS = ROOT / "docs"
 BUILD = ROOT / "build"
 OUT_HTML = BUILD / "how-to-research.html"
 OUT_PDF = BUILD / "how-to-research.pdf"
+LOGO_PATH = ROOT / "assets" / "how-to-research-logo.png"
 
 _CJK = re.compile(r"[\u3400-\u9fff\uf900-\ufaff]")
 _H1 = re.compile(r"^#\s+(.+)$", re.MULTILINE)
@@ -219,6 +221,18 @@ CSS = """
   @top-center { content: none; }
 }
 
+@page cover {
+  margin: 0;
+  @bottom-center { content: none; }
+  @top-center { content: none; }
+}
+
+@page back-cover {
+  margin: 0;
+  @bottom-center { content: none; }
+  @top-center { content: none; }
+}
+
 html {
   font-family: "Noto Sans CJK SC", "Noto Sans SC", "Noto Color Emoji", sans-serif;
 }
@@ -299,25 +313,86 @@ th { background: #f6f8fa; font-weight: 600; }
 hr { border: none; border-top: 1px solid #d0d7de; margin: 12pt 0; }
 
 .cover {
+  page: cover;
   break-after: page;
+  height: 297mm;
   text-align: center;
-  padding-top: 62mm;
+  padding-top: 56mm;
+}
+
+.cover .cover-logo {
+  width: 34mm;
+  height: auto;
+  margin-bottom: 10mm;
 }
 
 .cover h1 {
-  font-size: 34pt;
-  margin: 0 0 14pt;
+  font-size: 30pt;
+  margin: 0 0 8mm;
   bookmark-level: none;
 }
 
-.cover .subtitle {
-  font-size: 14pt;
+.cover .cover-subtitle {
+  font-size: 13pt;
   color: #57606a;
-  margin: 0 0 26pt;
+  margin: 0 0 16mm;
 }
 
-.cover .meta {
+.cover .cover-editor {
+  font-size: 11pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin: 0 0 22mm;
+}
+
+.cover .cover-meta {
+  font-size: 9pt;
+  color: #9ca3af;
+  line-height: 1.9;
+}
+
+.back-cover {
+  page: back-cover;
+  break-before: page;
+  height: 297mm;
+  text-align: center;
+  padding-top: 96mm;
+}
+
+.back-cover .back-logo {
+  width: 24mm;
+  height: auto;
+  margin-bottom: 8mm;
+}
+
+.back-cover .back-title {
+  font-size: 20pt;
+  margin: 0 0 6mm;
+  bookmark-level: none;
+}
+
+.back-cover .back-editor {
+  font-size: 11pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  margin: 0 0 14mm;
+}
+
+.back-cover .back-note {
   font-size: 10pt;
+  color: #57606a;
+  line-height: 1.9;
+  margin: 0 0 18mm;
+}
+
+.back-cover .back-meta {
+  font-size: 9pt;
+  color: #9ca3af;
+  margin: 0 0 4mm;
+}
+
+.back-cover .back-license {
+  font-size: 8.5pt;
   color: #9ca3af;
 }
 
@@ -405,6 +480,32 @@ def build_html(chapters: list[Chapter]) -> str:
 
     toc_parts.append("</ul></nav>")
 
+    logo_uri = LOGO_PATH.as_uri()
+    build_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    cover = (
+        '<section class="cover">'
+        f'<img class="cover-logo" src="{logo_uri}" alt="科研入门指南" />'
+        "<h1>科研入门指南</h1>"
+        '<p class="cover-subtitle">从 0 开始，掌握做科研、写论文的基本流程</p>'
+        '<p class="cover-editor">主编 · Siborne</p>'
+        '<p class="cover-meta">离线 PDF 版 · 由 GitHub Actions 自动生成<br/>'
+        f"生成时间 {build_date}</p>"
+        "</section>\n"
+    )
+
+    back_cover = (
+        '<section class="back-cover">'
+        f'<img class="back-logo" src="{logo_uri}" alt="科研入门指南" />'
+        '<h2 class="back-title">科研入门指南</h2>'
+        '<p class="back-editor">主编 · Siborne</p>'
+        '<p class="back-note">本手册内容由仓库 Markdown 文档自动汇编生成<br/>'
+        "如需最新版本，请访问 GitHub Releases 页面</p>"
+        f'<p class="back-meta">离线 PDF 版 · 由 GitHub Actions 自动生成 · {build_date}</p>'
+        '<p class="back-license">© 2026 Siborne · 本作品采用 CC BY-NC 4.0 许可协议</p>'
+        "</section>\n"
+    )
+
     return (
         "<!doctype html>\n"
         '<html lang="zh-CN">\n'
@@ -415,14 +516,12 @@ def build_html(chapters: list[Chapter]) -> str:
         f"<style>{CSS}</style>\n"
         "</head>\n"
         "<body>\n"
-        '<section class="cover">'
-        "<h1>🔬 科研入门指南</h1>"
-        '<p class="subtitle">从 0 开始，掌握做科研、写论文的基本流程</p>'
-        '<p class="meta">离线 PDF 版 · 由 GitHub Actions 自动生成</p>'
-        "</section>\n"
+        + cover
         + "\n".join(toc_parts)
         + "\n"
         + "\n".join(body_parts)
+        + "\n"
+        + back_cover
         + "\n</body>\n</html>\n"
     )
 
